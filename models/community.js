@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Strength extends Model { }
+class Community extends Model { }
 
-Strength.init(
+Community.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,27 +11,18 @@ Strength.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    exercise: {
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    author: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
-    duration: {
-      type: DataTypes.INTEGER,
+    created: {
+      type: DataTypes.DATE,
       allowNull: false,
-    },
-    metric: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      defaultValue: DataTypes.NOW,
     },
   },
   {
@@ -39,8 +30,8 @@ Strength.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'strength',
+    modelName: 'community',
   }
 );
 
-module.exports = Strength;
+module.exports = Community;

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Strength extends Model { }
+class Goals extends Model { }
 
-Strength.init(
+Goals.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,20 +11,18 @@ Strength.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    exercise: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     description: {
       type: DataTypes.STRING,
-    },
-    duration: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
-    metric: {
-      type: DataTypes.STRING,
+    targetDate: {
+      type: DataTypes.DATE,
       allowNull: false,
+    },
+    status: {
+      type: DataTypes.ENUM('Not Started', 'In Progress', 'Completed'),
+      allowNull: false,
+      defaultValue: 'Not Started',
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -39,8 +37,8 @@ Strength.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'strength',
+    modelName: 'goals',
   }
 );
 
-module.exports = Strength;
+module.exports = Goals;

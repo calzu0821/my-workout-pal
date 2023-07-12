@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Yoga extends Model {}
+class Yoga extends Model { }
 
 Yoga.init(
   {
