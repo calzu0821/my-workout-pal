@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Strength extends Model { }
+class Workout extends Model { }
 
-Strength.init(
+Workout.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,7 +11,11 @@ Strength.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    exercise: {
+    exercise_category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    exercise_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -39,8 +43,8 @@ Strength.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'strength',
+    modelName: 'Workout',
   }
 );
 
-module.exports = Strength;
+module.exports = Workout;
