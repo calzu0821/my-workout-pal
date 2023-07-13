@@ -26,10 +26,6 @@ Workout.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    metric: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -43,7 +39,7 @@ Workout.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Workout',
+    modelName: 'workout',
   }
 );
 
