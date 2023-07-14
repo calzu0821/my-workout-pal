@@ -1,15 +1,31 @@
+const { Community } = require('../models');
+
 const router = require('express').Router();
 
 // localhost:3001/
 router.get('/', (req, res) => {
-
     res.render('homepage');
 })
 
-// localhost:3001/community
-router.get('/community', (req, res) => {
-    
-    res.render('community');
-})
+router.get('/community', async (req, res) => {
+    try {
+      // Get all communities 
+      const communityData= await Community.findAll({
+
+      });
+      // console.log(communities)
+
+      const communityMap = communityData.map((community) => community.get({ plain: true }));
+      console.log(communityData)
+      // Pass serialized data and session flag into template
+      res.render('community', { 
+       communityMap
+      });
+    } catch (err) {
+        console.log(err)
+      res.status(500).json(err);
+      
+    }
+  });
 
 module.exports = router;

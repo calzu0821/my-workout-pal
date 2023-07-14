@@ -1,6 +1,13 @@
-{{> layout pageTitle="Workout Tracker App - Community"}}
 <section>
   <h2>Join the Community</h2>
   <p>Connect with fellow fitness enthusiasts, share your achievements, and get inspired!</p>
-  <!-- Add more community features here -->
+  
+    {{#each communityMap as |community| }}
+    
+     {{community.content}}
+      {{community.author}}
+      {{community.created}}
+
+    {{/each}}
+
 </section>
