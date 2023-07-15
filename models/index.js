@@ -13,3 +13,5 @@ User.hasMany(Workout, {
 
 
 module.exports = { User, Workout, Community };
+
+
