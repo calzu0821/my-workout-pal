@@ -29,36 +29,33 @@
         <a class="navbar-item">
           Home
         </a>
-  
+
         <a class="navbar-item">
-          Community
+          Exercise
         </a>
-  
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
-          </a>
-  
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-          </div>
-        </div>
+
+        <a class="navbar-item">
+            Community
+        </a>
+
       </div>
   
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a href='/signup'class="button is-light">
-              <strong>Sign up</strong>
+            <!-- Render conditional statements -->
+            {{#if logged_in}}
+            <a href='/profile'class="button">
+               Profile
             </a>
-            <a class="button is-white">
-              Log in
+            <a href='/logout'class="button is-light">
+                <strong>Log out</strong>
             </a>
+            {{else}}
+            <a href='/login'class="button is-light">
+              <strong>Log in</strong>
+            </a>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -70,7 +67,7 @@
   <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong> &copy; MyWorkoutPal</strong> by <a href="https://jgthms.com">May, Juan, Carlos, and Cristina</a>. The source code is licensed
+          <strong> &copy; MyWorkoutPal</strong> by <a href="https://github.com/calzu0821/my-workout-pal.git">May, Juan, Carlos, and Cristina</a>. The source code is licensed
           <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
           is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
         </p>
