@@ -3,10 +3,12 @@ const homeRoutes = require('./homeRoutes')
 const apiRoutes = require('./api')
 
 // localhost:3001/
-router.get('/', homeRoutes )
+router.use('/', homeRoutes )
 
 // localhost:3001/community
-router.get('/community', homeRoutes)
+router.use('/community', homeRoutes)
 
+// localhost:3001/api
+router.use('/api', apiRoutes)
 
 module.exports = router;

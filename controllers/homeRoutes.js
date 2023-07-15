@@ -10,14 +10,14 @@ const withAuth = require('../utils/auth');
 // localhost:3001/
 router.get('/', (req, res) => {
     res.render('homepage');
-})
+});
 
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/exercise');
-      return;
-    }
+    // if (req.session.logged_in) {
+    //   res.redirect('/exercise');
+    //   return;
+    // }
     res.render('login');
   });
 
@@ -27,7 +27,7 @@ router.get('/community', async (req, res) => {
       const communityData= await Community.findAll({
 
       });
-      // console.log(communities)
+      console.log(communities)
 
       const communityMap = communityData.map((community) => community.get({ plain: true }));
       console.log(communityData)
