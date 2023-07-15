@@ -15,3 +15,7 @@ User.hasMany(Workout, {
 module.exports = { User, Workout, Community };
 
 
+<<<<<<< HEAD
+=======
+module.exports = { User, Workout, Community };
+>>>>>>> 3dea5719fd386bb356ebe0b3414c8da3d5b3fc80
