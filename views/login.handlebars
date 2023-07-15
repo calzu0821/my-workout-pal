@@ -1,9 +1,85 @@
-<form id="login-form">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <button type="submit">Log In</button>
-  </form>
+<!-- Log in tile section -->
+<div class="tile is-ancestor m-6 p-6">
+  <div class="tile is-6 is-vertical is-parent">
+    <div class="tile is-child box has-text-centered">
+      <p class="title">Log in</p>
+        <!-- Log in -->
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-success">
+              Log in
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!-- Sign up tile section -->
+  <div class="tile is-6 is-vertical is-parent">
+    <div class="tile is-child box has-text-centered">
+      <p class="title">Sign up</p>
+  <!-- Sign up input -->
+        <div class="field">
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Full Name">
+          </div>
+        </div>
+    <!-- Email --> 
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email">
+          </p>
+        </div>
+    <!-- Password --> 
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password">
+          </p>
+        </div>
+    <!-- Goals dropdown menu --> 
+        <div class="field">
+          <label class="label">What's Your Goal?</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>Weightloss</option>
+                <option>Build Muscle</option>
+                <option>Maintain</option>
+              </select>
+            </div>
+          </div>
+        </div>
+    <!-- Gender radio --> 
+        <div class="field">
+            <div class="control">
+            <label class="radio">
+                <input type="radio" name="question">
+                Male
+            </label>
+            <label class="radio">
+                <input type="radio" name="question">
+                Female
+            </label>
+            </div>
+        </div>
+     <!-- Submit button --> 
+        <div class="field is-grouped is-justify-content-center">
+          <div class="control">
+            <button class="button is-info">Submit</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>
