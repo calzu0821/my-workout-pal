@@ -1,37 +1,35 @@
-<section>
-<script id="workout-template" type="text/x-handlebars-template">
-  <div class="container">
-    <div class="left-column">
+<!-- exercise.handlebars -->
+
+<div class="container">
+  <div class="left-column">
+    <section>
       <h2>Log Your Workouts</h2>
       <form id="workout-form">
         <label for="exercise-type">Exercise Type:</label>
         <select id="exercise-type" name="exercise-type">
-          {{#each exerciseTypes}}
-            <option value="{{this}}">{{this}}</option>
-          {{/each}}
           <option value="cardio">Cardio</option>
           <option value="strength-training">Strength Training</option>
           <option value="yoga">Yoga</option>
         </select>
-    
+        
         <label for="duration">Duration:</label>
         <input type="text" id="duration" name="duration">
-    
-    <!-- Add more input fields for other workout details -->
-    
+        
+        <!-- Add more input fields for other workout details -->
+        
         <button type="submit">Log Workout</button>
       </form>
-    </div>
+    </section>
+  </div>
 
-    <div class="right-column">
+  <div class="right-column">
+    <section>
       <h2>Logged Workouts</h2>
       <ul id="logged-workouts">
-        {{#each loggedWorkouts}}
+        {{#each workouts}}
         <li>{{this.exerciseType}} - {{this.duration}}</li>
         {{/each}}
       </ul>
-        <!-- Logged workouts will be added here -->
-    </div>
+    </section>
   </div>
-</script>
-</section>
+</div>
