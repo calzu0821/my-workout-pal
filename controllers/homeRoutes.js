@@ -1,17 +1,14 @@
 // Import modules
 const router = require('express').Router();
-const { Workout, User } = require('../models');
+const { Workout, Community, User } = require('../models');
 const withAuth = require('../utils/auth');
-
-// const { Community } = require('../models');
-
-// const router = require('express').Router();
 
 // localhost:3001/
 router.get('/', (req, res) => {
     res.render('homepage');
 });
 
+// localhost:3001/login
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     // if (req.session.logged_in) {
@@ -21,6 +18,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+// localhost:3001/community
 router.get('/community', async (req, res) => {
     try {
       // Get all communities 
