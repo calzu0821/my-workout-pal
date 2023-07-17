@@ -10,9 +10,7 @@
     <!-- jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
-   <!-- uncomment while testing the login route
-    <script src="/Week15/Project/my-workout-pal/public/js/exercise.js"></script>
-    -->
+    <script src="js/exercise.js"></script>
 </head>
 <body>
 
@@ -32,33 +30,24 @@
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-
-        <a class="navbar-item">
-          Exercise
-        </a>
-
-        <a class="navbar-item">
-            Community
-        </a>
-
-      </div>
+        <a class="navbar-item" href='/'>Home</a>
+        <a class="navbar-item" href='/exercise'>Exercise</a>
+        <a class="navbar-item" href='/community'>Community</a>
+    </div>
   
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
             <!-- Render conditional statements -->
             {{#if logged_in}}
-            <a href='/profile'class="button">
+            <a href='/exercise' class="button">
                Profile
             </a>
-            <a href='/logout'class="button is-light">
+            <a href='/logout' class="button is-light">
                 <strong>Log out</strong>
             </a>
             {{else}}
-            <a href='/login'class="button is-light">
+            <a href='/login' class="button is-light">
               <strong>Log in</strong>
             </a>
             {{/if}}
