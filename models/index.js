@@ -1,5 +1,5 @@
 const User = require('./User.js');
-const Community = require('./Community.js');
+const Community = require('./community.js');
 const Workout = require('./Workout.js');
 
 User.hasMany(Workout, {
