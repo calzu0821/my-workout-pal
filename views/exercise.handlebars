@@ -1,4 +1,3 @@
-<!-- exercise.handlebars -->
 <!-- Exercise Form -->
       <div class="tile is-parent is-justify-content-center p-6 m-3">
         <div class="tile is-4 is-child box has-text-centered">
@@ -34,9 +33,10 @@
         <div class="field">
           <label class="label">Date:</label>
           <div class="control has-icons-left has-icons-right">
-            <input type="date" id="date_created" name="trip-start"
-              value="MM/DD/YYYY">
-            <!-- <input class="input" type="text" placeholder="(MM/DD/YYYY)"> -->
+            <input class="input" type="date" id="date_created" name="trip-start" value="MM/DD/YYYY">
+              <span class="icon is-small is-left">
+                <i class="fas fa-calendar"></i>
+              </span>
           </div>
         </div>
          <!-- Submit button --> 
@@ -55,44 +55,6 @@
                {{format_date workout.created}}, {{workout.exercise_category}}, {{workout.exercise_name}}, {{workout.duration}} minutes
             </div>
             {{/each}}
-            {{!-- <div class="notification is-link">
-              <button class="delete"></button>
-              Cardio, Treadmill, 30, 07/15/2023
-            </div> --}}
         </div>        
       </div>
 
-
-{{!-- <div class="container">
-  <div class="left-column">
-    <section>
-      <h2>Log Your Workouts</h2>
-      <form id="workout-form">
-        <label for="exercise-type">Exercise Type:</label>
-        <select id="exercise-type" name="exercise-type">
-          <option value="cardio">Cardio</option>
-          <option value="strength-training">Strength Training</option>
-          <option value="yoga">Yoga</option>
-        </select>
-        
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration">
-        
-        <!-- Add more input fields for other workout details -->
-        
-        <button type="submit">Log Workout</button>
-      </form>
-    </section>
-  </div>
-
-  <div class="right-column">
-    <section>
-      <h2>Logged Workouts</h2>
-      <ul id="logged-workouts">
-        {{#each workouts}}
-        <li>{{this.exerciseType}} - {{this.duration}}</li>
-        {{/each}}
-      </ul>
-    </section>
-  </div>
-</div> --}}
