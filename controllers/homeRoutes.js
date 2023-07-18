@@ -61,7 +61,7 @@ router.get('/userexercise', async (req, res) => {
 
     const exerciseMap = exerciseData.get({ plain: true });
 
-    res.render('exercise', {
+    res.render('exercise-user', {
       workoutMap, ...exerciseMap,
       logged_in: req.session.logged_in
     });

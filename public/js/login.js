@@ -1,4 +1,4 @@
-const afterLoginPath = '/exercise';
+const afterLoginPath = '/userexercise';
 
 const loginFormHandler = async (event) => {
   event.preventDefault();

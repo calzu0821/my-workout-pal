@@ -19,14 +19,14 @@
           <div class="field">
             <label class="label">Exercise Name:</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="Ex: Bench Press">
+              <input class="input" type="text" placeholder="Ex: Bench Press" id="exercise-name">
             </div>
           </div>
         <!-- Duration input -->
         <div class="field">
             <label class="label">Duration (min):</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="Minutes">
+              <input class="input" type="text" placeholder="Minutes" id="duration">
             </div>
         </div>
         <!-- Date -->
@@ -42,7 +42,7 @@
          <!-- Submit button --> 
             <div class="field is-grouped is-justify-content-center">
               <div class="control">
-                <button class="button is-info">Submit</button>
+                <button class="button is-info" id="exercise-id">Submit</button>
               </div>
             </div>
         </div>
@@ -51,10 +51,15 @@
           <p class="title has-text-centered">Workout History:</p>
            {{#each workoutMap as |workout| }}
             <div class="notification is-link">
-            <button class="delete"></button>
+            <button value="{{workout.id}}" class="delete"></button>
                {{format_date workout.created}}, {{workout.exercise_category}}, {{workout.exercise_name}}, {{workout.duration}} minutes
             </div>
             {{/each}}
         </div>        
       </div>
+
+      <script src="/js/newexercise.js">
+</script>
+
+      
 
