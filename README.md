@@ -11,14 +11,16 @@
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  1. Download or clone the repository
-  2. Install [Node.js](https://nodejs.org/) if it is not installed on your machine
-  3. Navigate to the repository folder in the command line/terminal
+  On the command line terminal:
+  1. Navigate to the repository folder 
+  2. Download or clone the repository
+  3. Install [Node.js](https://nodejs.org/) if it is not installed on your machine
   4. Run `npm install` to install the necessary packages (in this case, Inquirer)
+  5. Connect to mySQL by adding an .ENV file containing the DB name, user, and password
   ## Usage
-  To run the application:
-  1. Navigate to the repository folder in the command line/terminal
-  2. Run `node index.js`
+Navigate to the repository folder and on the command line terminal: 
+  1. Run `node seeds/seed.js`
+  2. Run `node server.js`
   ## Visuals
   Here is a video link along with visuals of the Logo generator interface.
   https://drive.google.com/file/d/1PXd_yQ9O766ntpuvSn6jHslznb6jrtxb/view
@@ -32,8 +34,16 @@
   ## Tests
   To test this application:
   1. Navigate to the repository folder in the command line/terminal
-  2. Run `node index.js`
-  3. Enter the test values when prompted
+  2. Run `node server.js`
+  3. On the homepage's navigation bar, click Community to view workout related posts
+  4. Add a post via the Share your achievements form
+  5. Click Login
+  6. Sign in if you have an existing user account, othewise Sign up to create a new one
+  7. Add a new Workout log via the `Log your Workout` form
+  8. A list of the workout history is listed on the next column
+  9. To update, select a workout log from the Workout history, modify the details on the `Log your Workout` form.
+  10. To delete a workout log from the Workout history, click the `x` icon 
+  11. Logout to Exit 
   ## Questions
   For any additional questions, you can contact our team at:
   - Email: Exercise@MyWorkoutPal.com
