@@ -12,7 +12,7 @@ router.use('/community', homeRoutes)
 router.use('/api', apiRoutes)
 
 // localhost:3001/exercise
-router.use('/exercise', homeRoutes)
+router.use('/userexercise', homeRoutes)
 
 
 module.exports = router;
