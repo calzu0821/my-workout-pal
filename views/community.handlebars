@@ -7,14 +7,14 @@
       <div class="field">
           <label class="label">Name:</label>
           <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Name">
+          <input class="input" type="text" placeholder="Name" id="name">
           </div>
       </div>
   <!-- Date -->
   <div class="field">
     <label class="label">Date:</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input" type="date" id="date_created" name="trip-start" value="MM/DD/YYYY">
+      <input class="input" type="date" id="date" name="trip-start" value="MM/DD/YYYY">
       <span class="icon is-small is-left">
         <i class="fas fa-calendar"></i>
       </span>
@@ -24,13 +24,13 @@
   <div class="field">
     <label class="label">Message:</label>
     <div class="control">
-      <textarea class="textarea" placeholder="Enter your message"></textarea>
+      <textarea class="textarea" placeholder="Enter your message" id="message"></textarea>
     </div>
   </div>
    <!-- Submit button --> 
       <div class="field is-grouped is-justify-content-center">
         <div class="control">
-          <button class="button is-info">Submit</button>
+          <button class="button is-info" id="community-id">Submit</button>
         </div>
       </div>
   </div>
@@ -50,3 +50,4 @@
         </article>
       </div>
   </div>
+  <script src="/js/newcommunity.js"></script>
