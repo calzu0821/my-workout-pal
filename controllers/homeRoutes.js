@@ -4,17 +4,17 @@ const { Workout, Community, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    res.render('homepage');
+  res.render('homepage');
 });
 
 router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-        res.redirect('/exercise');
-    } else {
-        res.render('login');
-    }
-  });
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/exercise');
+  } else {
+    res.render('login');
+  }
+});
 
 // router.get('/exercise', (req, res) => {
 //     res.render('exercise');
@@ -22,7 +22,7 @@ router.get('/login', (req, res) => {
 router.get('/exercise', async (req, res) => {
   try {
     // Get all communities 
-    const workoutData= await Workout.findAll({
+    const workoutData = await Workout.findAll({
 
     });
     console.log(workoutData)
@@ -30,27 +30,28 @@ router.get('/exercise', async (req, res) => {
     const workoutMap = workoutData.map((workout) => workout.get({ plain: true }));
     console.log(workoutData)
     // Pass serialized data and session flag into template
-    res.render('exercise', { 
+    res.render('exercise', {
       workoutMap, logged_in: req.session.logged_in
     });
   } catch (err) {
-      console.log(err)
+    console.log(err)
     res.status(500).json(err);
-       
+
   }
 });
 
 router.get('/userexercise', async (req, res) => {
   try {
-     // Get all communities 
-     const workoutData= await Workout.findAll({
-      where: {user_id: req.session.user_id}
-      
-     });
-     console.log(workoutData)
- 
-     const workoutMap = workoutData.map((workout) => workout.get({ plain: true }));
-    const exerciseData = await Workout.findOne({where: {user_id: req.session.user_id}, 
+    // Get all communities 
+    const workoutData = await Workout.findAll({
+      where: { user_id: req.session.user_id }
+
+    });
+    console.log(workoutData)
+
+    const workoutMap = workoutData.map((workout) => workout.get({ plain: true }));
+    const exerciseData = await Workout.findOne({
+      where: { user_id: req.session.user_id },
       include: [
         {
           model: User,
@@ -59,12 +60,22 @@ router.get('/userexercise', async (req, res) => {
       ],
     });
 
-    const exerciseMap = exerciseData.get({ plain: true });
+    if (!exerciseData) {
+      res.render('exercise-user', {
+        workoutMap,
+        logged_in: req.session.logged_in
+      });
 
-    res.render('exercise-user', {
-      workoutMap, ...exerciseMap,
-      logged_in: req.session.logged_in
-    });
+    } else {
+
+      const exerciseMap = exerciseData.get({ plain: true });
+
+      res.render('exercise-user', {
+        workoutMap, ...exerciseMap,
+        logged_in: req.session.logged_in
+      });
+    }
+
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
@@ -73,9 +84,9 @@ router.get('/userexercise', async (req, res) => {
 
 router.get('/community', async (req, res) => {
   try {
-    
+
     // Get all communities 
-    const communityData= await Community.findAll({
+    const communityData = await Community.findAll({
 
     });
     console.log(communityData)
@@ -83,13 +94,13 @@ router.get('/community', async (req, res) => {
     const communityMap = communityData.map((community) => community.get({ plain: true }));
     console.log(communityData)
     // Pass serialized data and session flag into template
-    res.render('community', { 
-     communityMap
+    res.render('community', {
+      communityMap
     });
   } catch (err) {
-      console.log(err)
+    console.log(err)
     res.status(500).json(err);
-       
+
   }
 });
 
