@@ -29,9 +29,16 @@
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href='/'>Home</a>
-        <a class="navbar-item" href='/userexercise'>Exercise</a>
-        <a class="navbar-item" href='/community'>Community</a>
+        <!-- Render conditional statements -->
+            {{#if logged_in}}
+                <a class="navbar-item" href='/'>Home</a>
+                <a class="navbar-item" href='/userexercise'>Exercise</a>
+                <a class="navbar-item" href='/community'>Community</a>
+            {{else}}
+                <a class="navbar-item" href='/'>Home</a>
+                <a class="navbar-item" href='/login'>Exercise</a>
+                <a class="navbar-item" href='/community'>Community</a>
+            {{/if}}  
     </div>
   
       <div class="navbar-end">

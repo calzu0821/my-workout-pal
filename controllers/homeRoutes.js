@@ -19,26 +19,26 @@ router.get('/login', (req, res) => {
 // router.get('/exercise', (req, res) => {
 //     res.render('exercise');
 // });
-router.get('/exercise', async (req, res) => {
-  try {
-    // Get all communities 
-    const workoutData = await Workout.findAll({
+// router.get('/exercise', async (req, res) => {
+//   try {
+//     // Get all communities 
+//     const workoutData = await Workout.findAll({
 
-    });
-    console.log(workoutData)
+//     });
+//     console.log(workoutData)
 
-    const workoutMap = workoutData.map((workout) => workout.get({ plain: true }));
-    console.log(workoutData)
-    // Pass serialized data and session flag into template
-    res.render('exercise', {
-      workoutMap, logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    console.log(err)
-    res.status(500).json(err);
+//     const workoutMap = workoutData.map((workout) => workout.get({ plain: true }));
+//     console.log(workoutData)
+//     // Pass serialized data and session flag into template
+//     res.render('exercise', {
+//       workoutMap, logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     console.log(err)
+//     res.status(500).json(err);
 
-  }
-});
+//   }
+// });
 
 router.get('/userexercise', async (req, res) => {
   try {
