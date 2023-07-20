@@ -50,17 +50,17 @@
     </div>
   </div>
   <!-- Workout log list -->
- <div class="log">
-          <p class="title has-text-centered">Workout History:</p>
-           {{#each workoutMap as |workout| }}
-            <div class="notification is-link">
-            <button value="{{workout.id}}" class="delete" id="delete-exercise-button"></button>
-               {{format_date workout.created}}, {{workout.exercise_category}}, {{workout.exercise_name}}, {{workout.duration}} minutes
-            </div>
-            {{/each}}
-        </div>        
-      </div>
 
-<script src="/js/newexercise.js"></script>
-<script src="/js/deleteexercise.js"></script>
+  <div class="tile is-6 is-child box">
+    <p class="title has-text-centered">Workout History:</p>
+    {{#each workoutMap as |workout| }}
+    <div class="notification is-link">
+      <button value="{{workout.id}}" class="delete"></button>
+      {{format_date workout.created}}, {{workout.exercise_category}}, {{workout.exercise_name}}, {{workout.duration}}
+      minutes
+    </div>
+    {{/each}}
+  </div>
+</div>
+
 
