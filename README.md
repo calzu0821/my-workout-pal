@@ -23,10 +23,11 @@ Navigate to the repository folder and on the command line terminal:
   2. Run `node server.js`
   ## Visuals
   Here is a video link along with visuals of the Logo generator interface.
-  https://drive.google.com/file/d/1PXd_yQ9O766ntpuvSn6jHslznb6jrtxb/view
-  <img src="./assets/images/MyWorkoutPal 1.png" alt="MyWorkoutPal Screenshot">
-  <img src="./assets/images/MyWorkoutPal 2.png" alt="MyWorkoutPal Screenshot"> 
-  <img src="./assets/images/MyWorkoutPal 3.png" alt="MyWorkoutPal Screenshot"> 
+  https://drive.google.com/file/d/1qy8ogJRQTJti6C--6_b8We_iVeULqXmF/view
+  <img src="./public/images/MyWorkoutPal 1.png" alt="MyWorkoutPal Screenshot">
+  <img src="./public/images/MyWorkoutPal 2.png" alt="MyWorkoutPal Screenshot"> 
+  <img src="./public/images/MyWorkoutPal 3.png" alt="MyWorkoutPal Screenshot"> 
+  <img src="./public/images/MyWorkoutPal 4.png" alt="MyWorkoutPal Screenshot"> 
   ## License
   This project is covered under the MIT license.
   ## Contributing
